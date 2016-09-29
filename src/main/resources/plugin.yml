@@ -2,6 +2,10 @@ main: com.perceivedev.playerhousing.PlayerHousing
 name: PlayerHousing
 description: A customizable player housing plugin
 version: 1.0
+load: POSTWORLD
+depend: [WorldEdit]
+softdepend: [Multiverse-Core]
+authors: [Rayzr522, ZP18]
 commands:
     house:
         description: Main housing command
