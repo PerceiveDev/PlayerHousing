@@ -1,0 +1,8 @@
+main: com.perceivedev.playerhousing.PlayerHousing
+name: PlayerHousing
+description: A customizable player housing plugin
+version: 1.0
+commands:
+    house:
+        description: Main housing command
+        usage: We forgot to register our commands again...
