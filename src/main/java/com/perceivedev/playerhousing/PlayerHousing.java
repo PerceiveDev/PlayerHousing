@@ -3,8 +3,7 @@
  */
 package com.perceivedev.playerhousing;
 
-import java.util.logging.Logger;
-
+import com.perceivedev.playerhousing.housing.HousingManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -13,18 +12,18 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class PlayerHousing extends JavaPlugin {
 
-    private Logger logger;
+    // Register Housing Manager do not make a new class instance of this any other place. You can move this.
+    private HousingManager housingManager = new HousingManager();
 
     @Override
     public void onEnable() {
-        logger = getLogger();
 
-        logger.info(versionText() + " enabled");
+        getLogger().info(versionText() + " enabled");
     }
 
     @Override
     public void onDisable() {
-        logger.info(versionText() + " disabled");
+        getLogger().info(versionText() + " disabled");
     }
 
     public String versionText() {

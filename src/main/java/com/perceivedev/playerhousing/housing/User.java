@@ -6,10 +6,10 @@ import java.util.List;
 /**
  * Created by jan on 9/30/16.
  */
-public class UserObject {
+public class User {
     private List<House> houses = new ArrayList<House>();
 
-    public UserObject() {
+    public User() {
     }
 
     public void addHouse(House house) {
