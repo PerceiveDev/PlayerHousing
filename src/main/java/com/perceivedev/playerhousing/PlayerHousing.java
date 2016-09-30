@@ -9,6 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 /**
  * @author Rayzr
  */
+// Gotta take a break hope someone continues - Jan ;)
 public class PlayerHousing extends JavaPlugin {
 
     // Register Housing Manager do not make a new class instance of this any other place. You can move this.
