@@ -3,7 +3,7 @@ name: PlayerHousing
 description: A customizable player housing plugin
 version: 1.0
 load: POSTWORLD
-depend: [WorldEdit]
+depend: [WorldEdit,Vault]
 softdepend: [Multiverse-Core]
 authors: [Rayzr522, ZP18]
 commands:
