@@ -50,16 +50,14 @@ public class HousingManager {
         Location validHouseSpot = getValidHouseSpot();
         Location validHouseSpawnSpot = getValidSpawnLocation(validHouseSpot);
         // TODO COMPILE A SCHEMATIC WITH THE .JAR FILE
-        House house = new House(validHouseSpot, validHouseSpawnSpot, new File("/home/jan/Desktop/Minecraft-Server/plugins/WorldEdit/schematics/default.schematic"));
+        House house = new House(validHouseSpot, validHouseSpawnSpot, new File("plugins/WorldEdit/schematics/default.schematic"));
         player.teleport(validHouseSpawnSpot);
     }
 
     public Location getValidHouseSpot() {
         // Use some math here.
-
         // This is not good enough we need to find something better but good enough for now
         Location location = new Location(Bukkit.getWorld("HousingWorld"), (Math.random() * 10000D), 75, (Math.random() * 10000D));
-
         return location;
     }
 
