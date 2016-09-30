@@ -49,6 +49,7 @@ public class HousingManager {
         Player player = Bukkit.getPlayer(uniquePlayerID);
         Location validHouseSpot = getValidHouseSpot();
         Location validHouseSpawnSpot = getValidSpawnLocation(validHouseSpot);
+        // TODO COMPILE A SCHEMATIC WITH THE .JAR FILE
         House house = new House(validHouseSpot, validHouseSpawnSpot, new File("/home/jan/Desktop/Minecraft-Server/plugins/WorldEdit/schematics/default.schematic"));
         player.teleport(validHouseSpawnSpot);
     }
