@@ -16,8 +16,12 @@ public class House {
         this.houseLocation = houseLocation;
     }
 
-    public Location spawnLocation() {
+    public Location houseSpawnLocation() {
         return houseSpawnPoint;
+    }
+
+    public Location houseLocation() {
+        return houseLocation;
     }
 
 }
