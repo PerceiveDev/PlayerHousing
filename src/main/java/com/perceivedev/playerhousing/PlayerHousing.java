@@ -3,6 +3,7 @@
  */
 package com.perceivedev.playerhousing;
 
+import com.perceivedev.playerhousing.housing.HousingCommand;
 import com.perceivedev.playerhousing.housing.HousingManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -17,8 +18,9 @@ public class PlayerHousing extends JavaPlugin {
 
     @Override
     public void onEnable() {
-
+        // Tested Schematic function WORKS!!! housingManager.generateHouse(Bukkit.getWorlds().get(0).getSpawnLocation(),new File("/home/jan/Desktop/Minecraft-Server/plugins/WorldEdit/schematics/test.schematic"));
         getLogger().info(versionText() + " enabled");
+        getCommand("house").setExecutor(new HousingCommand());
     }
 
     @Override

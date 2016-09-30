@@ -8,6 +8,7 @@ import com.sk89q.worldedit.bukkit.WorldEditPlugin;
 import com.sk89q.worldedit.schematic.MCEditSchematicFormat;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
 
 import java.io.File;
 import java.io.IOException;
@@ -39,8 +40,12 @@ public class HousingManager {
 
     public void newHouse(UUID uniquePlayerID) {
         // Update this.
-        House house = new House(HousingManager.getHousingManager().getValidHouseSpot(), HousingManager.getHousingManager().getValidSpawnLocation(), null);
-
+        // This is a test use the other function when they are finished
+        // Example House house = new House(HousingManager.getHousingManager().getValidHouseSpot(), HousingManager.getHousingManager().getValidSpawnLocation(), null);
+        // Test
+        Player player = Bukkit.getPlayer(uniquePlayerID);
+        player.sendMessage("House is generating");
+        House house = new House(player.getLocation(), player.getLocation(), new File("/home/jan/Desktop/Minecraft-Server/plugins/WorldEdit/schematics/test.schematic"));
     }
 
     public Location getValidHouseSpot() {
