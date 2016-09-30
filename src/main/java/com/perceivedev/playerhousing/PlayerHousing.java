@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.perceivedev.playerhousing;
 
@@ -8,7 +8,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  * @author Rayzr
- *
  */
 public class PlayerHousing extends JavaPlugin {
 

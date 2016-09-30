@@ -35,7 +35,6 @@ public class HousingManager {
 
     }
 
-
     public Location getValidHouseSpot() {
         // Use some math here.
         return null;
