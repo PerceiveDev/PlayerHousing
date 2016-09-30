@@ -60,7 +60,6 @@ public class HousingManager {
         EditSession session = we.getWorldEdit().getEditSessionFactory().getEditSession(new BukkitWorld(houseLocation.getWorld()), 1000000);
         try {
             MCEditSchematicFormat.getFormat(schematic).load(schematic).paste(session, new Vector(houseLocation.getX(), houseLocation.getY(), houseLocation.getZ()), false);
-            return;
         } catch (MaxChangedBlocksException
                 | com.sk89q.worldedit.data.DataException | IOException e2) {
             e2.printStackTrace();
