@@ -20,7 +20,7 @@ public class HousingCommand implements CommandExecutor {
         Player player = (Player) commandSender;
         // Lets switch to make it look nice
         if (args.length == 0) {
-            player.sendMessage("Generating house");
+            //Test  player.sendMessage("Generating house");
             housingManager.newHouse(player.getUniqueId());
             return true;
         }
