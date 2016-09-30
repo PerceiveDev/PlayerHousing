@@ -1,8 +1,9 @@
 package com.perceivedev.playerhousing.housing;
 
 
-import com.sk89q.worldedit.schematic.SchematicFormat;
 import org.bukkit.Location;
+
+import java.io.File;
 
 /**
  * Created by jan on 9/30/16.
@@ -12,10 +13,10 @@ public class House {
     private Location houseSpawnPoint;
     private Location houseLocation;
 
-    public House(Location houseLocation, Location houseSpawnPoint, SchematicFormat schematic) {
+    public House(Location houseLocation, Location houseSpawnPoint, File schematic) {
         this.houseSpawnPoint = houseSpawnPoint;
         this.houseLocation = houseLocation;
-        HousingManager.getHousingManager().generateHouse(houseLocation, schematic); // Is this the right Schematic?
+        HousingManager.getHousingManager().generateHouse(houseLocation, schematic);
     }
 
     public Location houseSpawnLocation() {

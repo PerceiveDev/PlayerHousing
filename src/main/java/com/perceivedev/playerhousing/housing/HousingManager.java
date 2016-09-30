@@ -1,8 +1,16 @@
 package com.perceivedev.playerhousing.housing;
 
-import com.sk89q.worldedit.schematic.SchematicFormat;
+import com.sk89q.worldedit.EditSession;
+import com.sk89q.worldedit.MaxChangedBlocksException;
+import com.sk89q.worldedit.Vector;
+import com.sk89q.worldedit.bukkit.BukkitWorld;
+import com.sk89q.worldedit.bukkit.WorldEditPlugin;
+import com.sk89q.worldedit.schematic.MCEditSchematicFormat;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
@@ -45,8 +53,17 @@ public class HousingManager {
         return null;
     }
 
-    public void generateHouse(Location houseLocation, SchematicFormat schematicFormat) {
-        // Do stuff.
 
+    @SuppressWarnings("deprecation")
+    public void generateHouse(Location houseLocation, File schematic) {
+        WorldEditPlugin we = (WorldEditPlugin) Bukkit.getPluginManager().getPlugin("WorldEdit");
+        EditSession session = we.getWorldEdit().getEditSessionFactory().getEditSession(new BukkitWorld(houseLocation.getWorld()), 1000000);
+        try {
+            MCEditSchematicFormat.getFormat(schematic).load(schematic).paste(session, new Vector(houseLocation.getX(), houseLocation.getY(), houseLocation.getZ()), false);
+            return;
+        } catch (MaxChangedBlocksException
+                | com.sk89q.worldedit.data.DataException | IOException e2) {
+            e2.printStackTrace();
+        }
     }
 }
