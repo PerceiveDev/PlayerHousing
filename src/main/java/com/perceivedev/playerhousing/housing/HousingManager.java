@@ -8,6 +8,8 @@ import com.sk89q.worldedit.bukkit.WorldEditPlugin;
 import com.sk89q.worldedit.schematic.MCEditSchematicFormat;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,18 +46,34 @@ public class HousingManager {
         // Test
         //  Player player = Bukkit.getPlayer(uniquePlayerID);
         // House house = new House(player.getLocation(), player.getLocation(), new File("/home/jan/Desktop/Minecraft-Server/plugins/WorldEdit/schematics/test.schematic"));
-        House house = new House(HousingManager.getHousingManager().getValidHouseSpot(), HousingManager.getHousingManager().getValidSpawnLocation(), null);
-
+        Player player = Bukkit.getPlayer(uniquePlayerID);
+        Location validHouseSpot = getValidHouseSpot();
+        Location validHouseSpawnSpot = getValidSpawnLocation(validHouseSpot);
+        House house = new House(validHouseSpot, validHouseSpawnSpot, new File("/home/jan/Desktop/Minecraft-Server/plugins/WorldEdit/schematics/default.schematic"));
+        player.teleport(validHouseSpawnSpot);
     }
 
     public Location getValidHouseSpot() {
         // Use some math here.
-        return null;
+
+        // This is not good enough we need to find something better but good enough for now
+        Location location = new Location(Bukkit.getWorld("HousingWorld"), (Math.random() * 10000D), 75, (Math.random() * 10000D));
+
+        return location;
     }
 
-    public Location getValidSpawnLocation() {
-        // Some more math here
-        return null;
+    public Location getValidSpawnLocation(Location location) {
+        for (double x = (location.getX() - 15); x < location.getX() + 15; x++) {
+            for (double y = location.getY() - 15; y < location.getY() + 15; y++) {
+                for (double z = location.getZ() - 15; z < location.getZ() + 15; z++) {
+                    Location temporaryLocation = new Location(location.getWorld(), x, y, z);
+                    if (temporaryLocation.getBlock().getType().equals(Material.GRASS)) {
+                        return temporaryLocation.add(0, 1, 0);
+                    }
+                }
+            }
+        }
+        return location;
     }
 
 
