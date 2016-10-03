@@ -20,8 +20,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class PlayerHousing extends JavaPlugin {
 
     private static WorldManager wm;
-    // Register Housing Manager do not make a new class instance of this any other place. You can move this.
-    private HousingManager housingManager = new HousingManager();
+    // Register Housing Manager do not make a new class instance of this any
+    // other place. You can move this.
+    private HousingManager      housingManager = new HousingManager();
 
     public static WorldManager getMultiverseWorldManager() {
         return wm;
@@ -41,7 +42,9 @@ public class PlayerHousing extends JavaPlugin {
         } catch (NullPointerException e) {
             getLogger().info("Multiverse returned a nullpointer under creation or loading of HousingWorld. Shouldn't affect a thing");
         }
-        // Tested Schematic function WORKS!!! housingManager.generateHouse(Bukkit.getWorlds().get(0).getSpawnLocation(),new File("/home/jan/Desktop/Minecraft-Server/plugins/WorldEdit/schematics/test.schematic"));
+        // Tested Schematic function WORKS!!!
+        // housingManager.generateHouse(Bukkit.getWorlds().get(0).getSpawnLocation(),new
+        // File("/home/jan/Desktop/Minecraft-Server/plugins/WorldEdit/schematics/test.schematic"));
 
         getLogger().info(versionText() + " enabled");
         getCommand("house").setExecutor(new HousingCommand());
@@ -67,5 +70,11 @@ public class PlayerHousing extends JavaPlugin {
 
     }
 
+    /**
+     * @return the housing manager
+     */
+    public HousingManager getHousingManager() {
+        return housingManager;
+    }
 
 }

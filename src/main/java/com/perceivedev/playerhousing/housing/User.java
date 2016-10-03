@@ -20,7 +20,7 @@ public class User {
         houses.remove(house);
     }
 
-    public List<House> returnHouses() {
+    public List<House> getHouses() {
         return houses;
     }
 

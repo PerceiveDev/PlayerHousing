@@ -16,7 +16,7 @@ public class House {
     public House(Location houseLocation, Location houseSpawnPoint, File schematic) {
         this.houseSpawnPoint = houseSpawnPoint;
         this.houseLocation = houseLocation;
-        HousingManager.getHousingManager().generateHouse(houseLocation, schematic);
+        HousingManager.getInstance().generateHouse(houseLocation, schematic);
     }
 
     public Location houseSpawnLocation() {

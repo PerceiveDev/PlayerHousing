@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
  * Created by jan on 9/30/16.
  */
 public class HousingCommand implements CommandExecutor {
-    private HousingManager housingManager = HousingManager.getHousingManager();
+    private HousingManager housingManager = HousingManager.getInstance();
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
