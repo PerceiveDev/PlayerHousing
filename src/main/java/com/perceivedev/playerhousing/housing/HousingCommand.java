@@ -13,11 +13,11 @@ public class HousingCommand implements CommandExecutor {
     private HousingManager housingManager = HousingManager.getInstance();
 
     @Override
-    public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
-        if (!(commandSender instanceof Player)) {
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (!(sender instanceof Player)) {
             return true;
         }
-        Player player = (Player) commandSender;
+        Player player = (Player) sender;
         // Lets switch to make it look nice
         if (args.length == 0) {
             player.sendMessage("Generating house");

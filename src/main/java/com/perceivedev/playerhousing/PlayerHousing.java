@@ -14,9 +14,8 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
- * @author Rayzr
+ * 
  */
-// Gotta take a break hope someone continues - Jan ;)
 public class PlayerHousing extends JavaPlugin {
 
     private static WorldManager wm;
@@ -46,8 +45,8 @@ public class PlayerHousing extends JavaPlugin {
         // housingManager.generateHouse(Bukkit.getWorlds().get(0).getSpawnLocation(),new
         // File("/home/jan/Desktop/Minecraft-Server/plugins/WorldEdit/schematics/test.schematic"));
 
-        getLogger().info(versionText() + " enabled");
         getCommand("house").setExecutor(new HousingCommand());
+        getLogger().info(versionText() + " enabled");
     }
 
     @Override
