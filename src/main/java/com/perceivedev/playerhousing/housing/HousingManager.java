@@ -60,7 +60,9 @@ public class HousingManager {
         // HousingManager.getHousingManager().getValidSpawnLocation(), null);
         // Test
         // Player player = Bukkit.getPlayer(uniquePlayerID);
-        // House house = new House(player.getLocation(), player.getLocation(), new File("/home/jan/Desktop/Minecraft-Server/plugins/WorldEdit/schematics/test.schematic"));
+        // House house = new House(player.getLocation(), player.getLocation(),
+        // new
+        // File("/home/jan/Desktop/Minecraft-Server/plugins/WorldEdit/schematics/test.schematic"));
         Player player = Bukkit.getPlayer(uniquePlayerID);
         Location validHouseSpot = getValidHouseSpot();
         Location validHouseSpawnSpot = getValidSpawnLocation(validHouseSpot);
